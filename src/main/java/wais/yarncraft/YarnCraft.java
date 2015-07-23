@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import wais.yarncraft.geoyarn.GeoYarn;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -41,6 +42,10 @@ public class YarnCraft
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static Block getBlock(double x, double y, double z) {
+		return getBlockState(x, y, z).getBlock();
 	}
 	
 	private static IBlockState getBlockState(double x, double y, double z) {
