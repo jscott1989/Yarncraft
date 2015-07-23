@@ -64,7 +64,11 @@ public class Page {
 		ArrayList<Location> locations = new ArrayList<Location>();
 		Iterator<Object> locationIter = jsonPage.getJSONArray("locations").iterator();
 		while(locationIter.hasNext()){
-			locations.add(Location.create((JSONObject) locationIter.next()));
+			try {
+				locations.add(Location.create((JSONObject) locationIter.next()));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		int nextChapterID = jsonPage.getInt("next_chapter");
 		String description = jsonPage.getString("description");
