@@ -1,26 +1,29 @@
 package wais.yarncraft.geoyarn;
 
+import org.json.JSONObject;
+
 import net.minecraft.client.entity.EntityPlayerSP;
 import wais.yarncraft.util.Point3D;
 
-public abstract class Page {
+public class Page {
+	private int id;
+	
 	protected Chapter chapter;
 	protected String story;
 	protected String description;
 	
 	private Location[] locations;
 	
-	public Page(Chapter chapter, String description, String story, Location[] locations) {
-		this.description = description;
+	private int nextChapterID = -1;
+	
+	public Page(int id, Chapter chapter, String story, Location[] locations, int nextChapterID) {
+		this.id = id;
 		this.chapter = chapter;
 		this.story = story;
 		this.locations = locations;
+		this.nextChapterID = nextChapterID;
 	}
-	
-	public String getDescription() {
-		return description;
-	}
-	
+
 	public boolean matches(EntityPlayerSP player) {
 		for (Location location : locations) {
 			if (location.match(player)) {
@@ -30,5 +33,25 @@ public abstract class Page {
 		return false;
 	}
 	
-	public abstract void activate();
+	public void activate(){
+		chapter.getGeoYarn().showText(story);
+		if (nextChapterID != -1){
+			chapter.getGeoYarn().goToChapter(nextChapterID);
+		}
+		else{
+			//TODO: CLean up world etc.
+		}
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public Integer getID() {
+		return id;
+	}
+
+	public static Page create(JSONObject next) {
+		return new Page(int id, Chapter chapter, String story, Location[] locations, int nextChapterID);
+	}
 }

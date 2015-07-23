@@ -1,6 +1,18 @@
 package wais.yarncraft.geoyarn;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Iterator;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ChatComponentText;
@@ -12,12 +24,22 @@ public class GeoYarn {
 	
 	private HashMap<Integer, Chapter> chapters = new HashMap<Integer, Chapter>();
 	
-	public GeoYarn(String filename) {
-		Chapter c1 = new Chapter(this, 1);
-		chapters.put(1, c1);
-		chapters.put(2, new Chapter(this, 2));
+	public GeoYarn(String filename) throws IOException {
 		
-		goToChapter(c1);
+		String text = new String(Files.readAllBytes(Paths.get("file")), StandardCharsets.UTF_8);
+		createChapters(new JSONArray(text));
+	}
+	
+	private void createChapters(JSONArray jsonChapters){
+		Iterator<Object> chapterIter = jsonChapters.iterator();
+			while(chapterIter.hasNext()){
+				
+				JSONObject jsonChapter = (JSONObject) chapterIter.next();
+			
+				Chapter chapter = Chapter.create(this, jsonChapter);
+				chapters.put(chapter.getID(), chapter);
+		}
+		 
 	}
 	
 	public void update() {
@@ -31,7 +53,7 @@ public class GeoYarn {
 	public static void showText(String text) {
 		showText("\2478[\247cYarnCraft\2478] \247f ", text);
 	}
-	
+		
 	public static void showText(String prefix, String text) {
 		Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(prefix + text));
 	}
