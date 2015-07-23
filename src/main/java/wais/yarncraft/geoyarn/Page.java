@@ -53,6 +53,8 @@ public class Page {
 	}
 
 	public static Page create(JSONObject jsonPage, Chapter chapter) {
+		System.out.println(jsonPage);
+		
 		int id = jsonPage.getInt("id");
 		String story = jsonPage.getString("content");
 		Location[] locations = Location.create(jsonPage.getJSONArray("locations"));

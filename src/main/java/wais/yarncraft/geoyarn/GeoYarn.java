@@ -26,8 +26,9 @@ public class GeoYarn {
 	
 	public GeoYarn(String filename) throws IOException {
 		
-		String text = new String(Files.readAllBytes(Paths.get("file")), StandardCharsets.UTF_8);
+		String text = new String(Files.readAllBytes(Paths.get(filename)), StandardCharsets.UTF_8);
 		createChapters(new JSONArray(text));
+		goToChapter(1);
 	}
 	
 	private void createChapters(JSONArray jsonChapters){

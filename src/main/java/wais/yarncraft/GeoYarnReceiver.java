@@ -13,7 +13,9 @@ public class GeoYarnReceiver {
 	@SubscribeEvent(priority = EventPriority.NORMAL)
     public void eventHandler(RenderGameOverlayEvent event) {
 		// TODO: Figure out what event this should attach to
-		YarnCraft.geoYarn.update();
+		if (YarnCraft.geoYarn != null){
+			YarnCraft.geoYarn.update();
+		}
 	}
 	
 	@SubscribeEvent
