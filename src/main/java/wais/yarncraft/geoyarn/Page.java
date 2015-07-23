@@ -1,5 +1,8 @@
 package wais.yarncraft.geoyarn;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import org.json.JSONObject;
 
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -57,9 +60,14 @@ public class Page {
 		
 		int id = jsonPage.getInt("id");
 		String story = jsonPage.getString("content");
-		Location[] locations = Location.create(jsonPage.getJSONArray("locations"));
+		
+		ArrayList<Location> locations = new ArrayList<Location>();
+		Iterator<Object> locationIter = jsonPage.getJSONArray("locations").iterator();
+		while(locationIter.hasNext()){
+			locations.add(Location.create((JSONObject) locationIter.next()));
+		}
 		int nextChapterID = jsonPage.getInt("next_chapter");
 		String description = jsonPage.getString("description");
-		return new Page(id, chapter, story, locations, nextChapterID, description);
+		return new Page(id, chapter, story, locations.toArray(new Location[]{}), nextChapterID, description);
 	}
 }
