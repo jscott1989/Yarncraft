@@ -14,22 +14,22 @@ public abstract class Location {
 
 	public static Location create(JSONObject jsonLocation) throws Exception{
 		String type = jsonLocation.getString("type");
-		if (type == "BiomeLocation"){
+		if (type.equals("BiomeLocation")){
 			return new BiomeLocation(jsonLocation.getString("biome"));
 		}
-		else if(type == "NotLocation"){
+		else if(type.equals("NotLocation")){
 			return new NotLocation(Location.create(jsonLocation.getJSONObject("location")));
 		}
-		else if(type == "AndLocation"){
+		else if(type.equals("AndLocation")){
 			return new AndLocation(Location.create(jsonLocation.getJSONObject("location1")), Location.create(jsonLocation.getJSONObject("location2")));
 		}
-		else if(type == "NearbyLocation"){
+		else if(type.equals("NearbyLocation")){
 			return new NearbyLocation(jsonLocation.getString("nearby"), jsonLocation.getInt("distance"));
 		}
-		else if(type == "TagLocation"){
+		else if(type.equals("TagLocation")){
 			return new TagLocation(jsonLocation.getString("tag"));
 		}
-		else if(type == "PointLocation"){
+		else if(type.equals("PointLocation")){
 			return new PointLocation(new Point3D(jsonLocation.getDouble("x"), jsonLocation.getDouble("y"), jsonLocation.getDouble("z")));
 		}
 		else{

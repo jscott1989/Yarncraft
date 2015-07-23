@@ -96,10 +96,18 @@ public class YarnCraft
         	}
     	}
     	
+    	if (counter.getOrDefault(Material.grass, 0) > AREA_SIZE * AREA_SIZE) {
+    		tags.add("green");
+    	}
+    	
     	
     	// wet: Is the player in water?
     	if (getMaterial(player.lastTickPosX, player.lastTickPosY, player.lastTickPosZ) == Material.water) {
     		tags.add("wet");
+    	}
+    	
+    	if (player.isRiding()) {
+    		tags.add("riding");
     	}
     	
 //    	int DARK_VALUE = 3;

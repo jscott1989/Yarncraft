@@ -10,9 +10,8 @@
 
                 "locations": [
                     {
-                        "type": "NearbyLocation",
-                        "nearby": "Minecart",
-                        "distance": 0
+                        "type": "TagLocation",
+                        "tag": "riding"
                     }
                 ]
             }
@@ -32,9 +31,8 @@
                     {
                         "type": "NotLocation",
                         "location": {
-                            "type": "NearbyLocation",
-                            "nearby": "Minecart",
-                            "distance": 0
+                            "type": "TagLocation",
+                            "tag": "riding"
                         }
                     }
                 ]
