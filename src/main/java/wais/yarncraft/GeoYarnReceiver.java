@@ -19,7 +19,6 @@ public class GeoYarnReceiver {
 	@SubscribeEvent
 	public void onConnectedToServerEvent(EntityJoinWorldEvent event) {
 		if (event.entity.getClass().getName().equals("net.minecraft.client.entity.EntityPlayerSP")) {
-			System.out.println("INITIALIZE******");
 			YarnCraft.init();
 		}
 	}
