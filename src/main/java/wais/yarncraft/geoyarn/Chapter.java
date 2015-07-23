@@ -20,15 +20,15 @@ public class Chapter {
 		this.geoYarn = geoYarn;
 		this.id = chapterID;
 		
-		if (chapterID == 1) {
-			pages.put(1, new Page(1, this, "YOU FALL IN THE RIVER. IT IS WET", new Location[]{
-					new BiomeLocation("River")
-			}, 2));
-		} else {
-			pages.put(1, new Page(1, this, "That's better!", new Location[]{
-					new NotLocation(new BiomeLocation("River"))
-			}, -1));
-		}
+//		if (chapterID == 1) {
+//			pages.put(1, new Page(1, this, "YOU FALL IN THE RIVER. IT IS WET", new Location[]{
+//					new BiomeLocation("River")
+//			}, 2, "Go somewhere wet"));
+//		} else {
+//			pages.put(1, new Page(1, this, "That's better!", new Location[]{
+//					new NotLocation(new BiomeLocation("River"))
+//			}, -1, "Go somewhere dry"));
+//		}
 	}
 	
 	public static Chapter create(GeoYarn geoyarn, JSONObject jsonChapter){
@@ -40,7 +40,7 @@ public class Chapter {
 		
 		Iterator<Object> pageIter = jsonChapter.getJSONArray("pages").iterator();
 		while(pageIter.hasNext()){
-			Page page = Page.create((JSONObject) pageIter.next());
+			Page page = Page.create((JSONObject) pageIter.next(), chapter);
 			pages.put(page.getID(), page);
 			
 		}

@@ -1,5 +1,6 @@
 package wais.yarncraft;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +39,6 @@ public class YarnCraft
 		 try {
 			geoYarn = new GeoYarn("story.json");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

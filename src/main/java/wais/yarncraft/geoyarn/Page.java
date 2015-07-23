@@ -16,12 +16,13 @@ public class Page {
 	
 	private int nextChapterID = -1;
 	
-	public Page(int id, Chapter chapter, String story, Location[] locations, int nextChapterID) {
+	public Page(int id, Chapter chapter, String story, Location[] locations, int nextChapterID, String description) {
 		this.id = id;
 		this.chapter = chapter;
 		this.story = story;
 		this.locations = locations;
 		this.nextChapterID = nextChapterID;
+		this.description = description;
 	}
 
 	public boolean matches(EntityPlayerSP player) {
@@ -51,7 +52,14 @@ public class Page {
 		return id;
 	}
 
-	public static Page create(JSONObject next) {
-		return new Page(int id, Chapter chapter, String story, Location[] locations, int nextChapterID);
+	public static Page create(JSONObject jsonPage, Chapter chapter) {
+		System.out.println(jsonPage);
+		
+		int id = jsonPage.getInt("id");
+		String story = jsonPage.getString("content");
+		Location[] locations = Location.create(jsonPage.getJSONArray("locations"));
+		int nextChapterID = jsonPage.getInt("next_chapter");
+		String description = jsonPage.getString("description");
+		return new Page(id, chapter, story, locations, nextChapterID, description);
 	}
 }
