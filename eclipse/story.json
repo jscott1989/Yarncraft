@@ -1,0 +1,199 @@
+[
+    {
+        "id": 1,
+        "pages": [
+            {
+                "id": 1,
+                "description": "This story begins inside a minecart",
+                "content": "",
+                "next_chapter": 2,
+
+                "locations": [
+                    {
+                        "type": "NearbyLocation",
+                        "nearby": "Minecart",
+                        "distance": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "pages": [
+            {
+                "id": 1,
+                "description": "Get out of the minecart",
+
+                "content": "It had been years since I'd been here, and while I remembered the place fondly, I was still left with a strange feeling of guilt for my own neglect of the place. Why had it been so long since I'd returned? The buildings themselves stared at me like a disapproving relative suspicious of my sudden arrival. The journey had not been a long one, but it had been uncomfortable, and hot, and I was eager to leave the minecart and begin my business. I wasn't to be here long, and saw no reason for delay.",
+                "next_chapter": 3,
+
+                "locations": [
+                    {
+                        "type": "NotLocation",
+                        "location": {
+                            "type": "NearbyLocation",
+                            "nearby": "Minecart",
+                            "distance": 0
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "pages": [
+            {
+                "id": 1,
+                "description": "Head indoors",
+
+                "content": "I quickly made my way inside, out of the stifling weather and into the cool breeze of the air conditioned hall. The place was clean, and smelt new. Something further evidenced by the pristine, seemingly untouched, catalogue furniture that lay carefully arranged in the reception area. I didn't know this place, the familiarity that greeted my arrival now replaced with a sense of intrusion. Of not belonging. I sighed and reached into my bag, eager to get to work, and retrieved my paperwork. Crude print outs and scribbles directing where I needed to be and why, this was the tenth such visit on my trip and I had more to come. Ford, the man I was looking for was Ford. No building number, no room number, just this street and 'Ford'.",
+                "next_chapter": 4,
+
+                "locations": [
+                    {
+                        "type": "TagLocation",
+                        "tag": "indoors"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "description": "Head somewhere green",
+
+                "content": "As I quickly made my way along the path I found myself distracted by the greenery. I began to realise that part of the reason for my uncomfortable journey was that I didn't really want to be here. While I held fond memories of the place and was at first pleased by its familiar silhouette and sounds it had been too long, and the reason I was here held no real interest for me. I looked at the paper again, 'Ford', a name that meant nothing to me, much as I no longer meant anything to this place.",
+                "next_chapter": 5,
+
+                "locations": [
+                    {
+                        "type": "TagLocation",
+                        "tag": "green"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "pages": [
+            {
+                "id": 1,
+                "description": "Walk towards the reception desk",
+
+                "content": "Woefully ill equipped I glanced at the reception desk, hoping to find some eager to help, but bored and not too busy, staff. But I was to be disappointed by an empty chair staring back at me. Regardless I began my search, walking down corridors and peering into rooms, eagerly hoping for a sign that might lead me to Ford's office or a person that might assist me. But I found nothing. Only endless empty rooms, and corridors that smelt of fresh paint and new carpet. This was, obviously, not where I was meant to be and I made my way through a side door and outside again. Down the path I went, and towards another set of buildings partially obscured by trees. Perhaps there I would find 'Ford'.",
+                "next_chapter": 6,
+
+                "locations": [
+                    {
+                        "type": "NearbyLocation",
+                        "nearby": "EnchantmentTable",
+                        "distance": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "pages": [
+            {
+                "id": 1,
+                "description": "Sit under a tree",
+
+                "content": "I sat for a moment at the base of one of the trees and set down my bag, and papers. I elected that after all there was no rush, and that anything that needed doing could be done when I wanted it. The tree had begun to turn and atop its gnarled and twisted trunk sat a carpet of faintly yellow leaves. Not yet red, but a mix of green and yellow, a mark of late September upon the foliage. As I idly twisted and folded a fallen leaf I spotted a narrow path leading beyond the trees away from me, I stood, and lazily wandered along its route.",
+                "next_chapter": 6,
+
+                "locations": [
+                    {
+                        "type": "NearbyLocation",
+                        "nearby": "Tree",
+                        "distance": 2
+                    }
+                ]
+            }
+        ]
+    }
+    {
+        "id": 6,
+        "pages": [
+            {
+                "id": 1,
+                "description": "Approach the water",
+
+                "content":"The sound of wind in the trees was quickly joined by that of the splash and babble of water. A small stream ran alongside the path, quickly carrying fallen leaves off into the distance. I became aware that its currents and eddies were the first motion I had seen since I had left the road. The place was unnaturally still, and coupled with its familiarity I felt as though I was wandering through a photograph or a memory as part of some wistful dream. There had been no people, no sound of animals, just leaves, and water.",
+                "next_chapter": 5,
+
+                "locations": [
+                    {
+                        "type": "NearbyLocation",
+                        "nearby": "Water",
+                        "distance": 5
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "description": "Make your way to somewhere people gather.",
+
+                "content": "As I made my way along the path I quickened my pace only to be interrupted in my silence once again by the cacophony of humanity. The trees parted to reveal a crowd, and the air was alive with their conversation. Why exactly they had gathered here didn't seem apparent, but they were here amongst the tables and chairs, and the sudden return to humanity shook me into the realisation I had a job to do. What was the name again? Ford? I turned from person to person, asking over and over, 'Are you Ford?', 'Have you seen a Ford?', 'Excuse me I'm looking for Ford'. But I was faced with blank stares, bemused shrugs, and shaking heads. I was almost a ghost in the crowd, barely perceived, and unacknowledged. There was nothing for me here, this place didn't know me anymore.",
+                "next_chapter": 5,
+
+                "locations": [
+                    {
+                        "type": "NearbyLocation",
+                        "nearby": "Well",
+                        "distance": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "pages": [
+            {
+                "id": 1,
+                "description": "Go to the shadow of a large building.",
+
+                "content": "I wandered thoughtfully away for some time, away from the road, and the trees, until I saw it. It loomed in my vision ahead, the great shadow of a giant of brick and glass, of concrete and steel. I had always remembered it as something smaller, but now the old building seemed to tower above with walls unchanged by time.",
+                "next_chapter": 6,
+
+                "locations": [
+                    {
+                        "type": "AndLocation",
+                        "location1": {
+                            "type": "TagLocation",
+                            "tag": "dark"
+                        },
+                        "location2": {
+                            "type": "NearbyLocation",
+                            "nearby": "Building",
+                            "distance": 10
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "pages": [
+            {
+                "id": 1,
+                "description": "Walk up to the building.",
+
+                "content": "I touched its walls and remembered the time I had first come here, when I had first gazed up at the face of this place and smiled. It felt back then that I would never leave, that I had found my place in the world. I was wrong, as people often are, and time had seen us travel far apart. We had both changed, in ways neither of us understood. I put the piece of paper back in my bag, Ford could wait, and took it off my shoulder. I leant against the brick work, and pretended, just for a moment, I had never left.",
+                "next_chapter": null,
+
+                "locations": [
+                    {
+                        "type": "NearbyLocation",
+                        "nearby": "Building",
+                        "distance": 2
+                    }
+                ]
+            }
+        ]
+    }
+]

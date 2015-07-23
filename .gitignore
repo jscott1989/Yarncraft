@@ -2,7 +2,6 @@
 
 !.gitignore
 !*.java
-!*.json
+!story.json
 
 !*/
-eclipse
