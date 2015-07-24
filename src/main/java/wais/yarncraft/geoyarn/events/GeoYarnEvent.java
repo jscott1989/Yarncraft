@@ -13,16 +13,16 @@ import wais.yarncraft.util.Point3D;
 
 public abstract class GeoYarnEvent {
 
-	public static GeoYarnEvent create(JSONObject jsonLocation) throws InvalidGeoYarnEventException{
-		String type = jsonLocation.getString("type");
+	public static GeoYarnEvent create(JSONObject jsonEvent) throws InvalidGeoYarnEventException{
+		String type = jsonEvent.getString("type");
 		if (type.equals("create")){
-			return new CreateEvent(jsonLocation.getString("structure"));
+			return new CreateEvent(jsonEvent.getString("structure"));
 		}
 		else if(type.equals("spawn")){
-			return new SpawnEvent(jsonLocation.getString("mob"), jsonLocation.getInt("number"));
+			return new SpawnEvent(jsonEvent.getString("mob"), jsonEvent.getInt("number"));
 		}
 		else if(type.equals("weather")){
-			return new WeatherEvent(jsonLocation.getString("weather"), jsonLocation.getInt("duration"));
+			return new WeatherEvent(jsonEvent.getString("weather"), jsonEvent.getInt("duration"));
 		}
 		else{
 			throw new InvalidGeoYarnEventException();
