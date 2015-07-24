@@ -66,8 +66,15 @@
                         "location2": {
                             "type": "NearbyLocation",
                             "nearby": "tile.enchantmentTable",
-                            "distance": 5
+                            "distance": 10
                         }
+                    }
+                ],
+
+                "events": [
+                    {
+                        "type": "weather",
+                        "weather": "clear"
                     }
                 ]
             },

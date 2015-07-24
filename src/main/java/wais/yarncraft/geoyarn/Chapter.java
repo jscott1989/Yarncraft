@@ -32,8 +32,6 @@ public class Chapter {
 	}
 	
 	public static Chapter create(GeoYarn geoyarn, JSONObject jsonChapter){
-		
-		
 		Chapter chapter = new Chapter(geoyarn, jsonChapter.getInt("id"));
 		
 		HashMap<Integer, Page> pages = new HashMap<Integer, Page>();
