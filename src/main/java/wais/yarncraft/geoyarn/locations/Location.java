@@ -1,4 +1,4 @@
-package wais.yarncraft.geoyarn;
+package wais.yarncraft.geoyarn.locations;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -7,12 +7,8 @@ import wais.yarncraft.util.Point3D;
 import net.minecraft.client.entity.EntityPlayerSP;
 
 public abstract class Location {
-	public abstract boolean match(EntityPlayerSP player);
 	
-	
-	public static String[] PARAMETERS = {};
-
-	public static Location create(JSONObject jsonLocation) throws Exception{
+	public static Location create(JSONObject jsonLocation) throws InvalidLocationException{
 		String type = jsonLocation.getString("type");
 		if (type.equals("BiomeLocation")){
 			return new BiomeLocation(jsonLocation.getString("biome"));
@@ -33,7 +29,9 @@ public abstract class Location {
 			return new PointLocation(new Point3D(jsonLocation.getDouble("x"), jsonLocation.getDouble("y"), jsonLocation.getDouble("z")));
 		}
 		else{
-			throw new Exception();
+			throw new InvalidLocationException();
 		}
 	}
+	
+	public abstract boolean match(EntityPlayerSP player);
 }

@@ -100,7 +100,7 @@ public class YarnCraft
     	
     	HashMap<Material, Integer> counter = countAroundPlayer(player, AREA_SIZE);
     	
-    	if (counter.getOrDefault(Material.grass, 0) > AREA_SIZE * AREA_SIZE) {
+    	if (counter.get(Material.grass) != null &&  counter.get(Material.grass) > AREA_SIZE * AREA_SIZE) {
     		tags.add("green");
     	}
     	

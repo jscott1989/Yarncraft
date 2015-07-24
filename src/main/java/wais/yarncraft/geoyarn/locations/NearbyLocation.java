@@ -1,4 +1,4 @@
-package wais.yarncraft.geoyarn;
+package wais.yarncraft.geoyarn.locations;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
