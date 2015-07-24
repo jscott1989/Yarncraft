@@ -6,27 +6,33 @@ import java.util.Iterator;
 import org.json.JSONObject;
 
 import net.minecraft.client.entity.EntityPlayerSP;
+import wais.yarncraft.geoyarn.events.GeoYarnEvent;
 import wais.yarncraft.geoyarn.locations.Location;
 import wais.yarncraft.util.Point3D;
 
 public class Page {
 	private int id;
 	
-	protected Chapter chapter;
-	protected String story;
-	protected String description;
-	
+	private Chapter chapter;
+	private String story;
+	private String description;
+	private GeoYarnEvent event;
 	private Location[] locations;
 	
 	private int nextChapterID = -1;
 	
-	public Page(int id, Chapter chapter, String story, Location[] locations, int nextChapterID, String description) {
+	public Page(int id, Chapter chapter, String story, Location[] locations, int nextChapterID, String description, GeoYarnEvent event) {
 		this.id = id;
 		this.chapter = chapter;
 		this.story = story;
 		this.locations = locations;
 		this.nextChapterID = nextChapterID;
 		this.description = description;
+		this.event = event;
+	}
+	
+	public Page(int id, Chapter chapter, String story, Location[] locations, int nextChapterID, String description) {
+		this(id, chapter, story, locations, nextChapterID, description, null);
 	}
 
 	public boolean matches(EntityPlayerSP player) {
@@ -40,6 +46,9 @@ public class Page {
 	
 	public void activate(){
 		chapter.getGeoYarn().showText(story);
+		if (event != null){
+			event.activate();
+		}
 		if (nextChapterID != -1){
 			chapter.getGeoYarn().goToChapter(nextChapterID);
 		}
