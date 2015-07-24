@@ -188,11 +188,11 @@
                         "distance": 5
                     }
                 ],
-
-                "actions": [
+                "events": [
                     {
-                        "type": "SpawnPeople",
-                        "number": 20
+                        "type": "spawn",
+                        "mob": "villager",
+                        "number": 3
                     }
                 ]
             }
