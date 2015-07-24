@@ -1,4 +1,4 @@
-package wais.yarncraft.geoyarn;
+package wais.yarncraft.geoyarn.locations;
 
 import wais.yarncraft.util.Point3D;
 import wais.yarncraft.util.Polygon3D;

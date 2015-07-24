@@ -6,6 +6,7 @@ import java.util.Iterator;
 import org.json.JSONObject;
 
 import net.minecraft.client.entity.EntityPlayerSP;
+import wais.yarncraft.geoyarn.locations.Location;
 import wais.yarncraft.util.Point3D;
 
 public class Page {
