@@ -150,6 +150,14 @@
                         "nearby": "Well",
                         "distance": 5
                     }
+                ],
+
+                "events": [
+                    {
+                        "type": "spawn",
+                        "mob": "villager",
+                        "number": 3
+                    }
                 ]
             }
         ]
