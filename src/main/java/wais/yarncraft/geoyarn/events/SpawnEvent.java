@@ -36,7 +36,7 @@ public class SpawnEvent extends GeoYarnEvent {
 	}
 	
 	public int randomOffset(){
-		return rand.nextInt(11) - 5;
+		return rand.nextInt(40) - 20;
 	}
 
 }

@@ -88,7 +88,7 @@
                 "locations": [
                     {
                         "type": "NearbyLocation",
-                        "nearby": "tile.log",
+                        "nearby": "green",
                         "distance": 5
                     }
                 ]
@@ -184,7 +184,7 @@
                 "locations": [
                     {
                         "type": "NearbyLocation",
-                        "nearby": "Well",
+                        "nearby": "tile.beacon",
                         "distance": 5
                     }
                 ],
@@ -192,7 +192,7 @@
                     {
                         "type": "spawn",
                         "mob": "villager",
-                        "number": 3
+                        "number": 150
                     }
                 ]
             }
