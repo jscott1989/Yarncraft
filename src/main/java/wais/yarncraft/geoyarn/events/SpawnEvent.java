@@ -8,6 +8,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.MathHelper;
 
 public class SpawnEvent extends GeoYarnEvent {
 
@@ -30,6 +31,9 @@ public class SpawnEvent extends GeoYarnEvent {
 				 entity = new EntityVillager(Minecraft.getMinecraft().theWorld);
 			}
 			entity.setPositionAndUpdate(player.posX + randomOffset(), player.posY, player.posZ+ randomOffset());
+			entity.setLocationAndAngles(player.posX+ randomOffset(), player.posY, player.posZ+ randomOffset(), MathHelper.wrapAngleTo180_float(w.rand.nextFloat() * 360.0F), 0.0F);
+			//entity.rotationYawHead = entity.rotationYaw;
+			//entity.renderYawOffset = entity.rotationYaw;
 			Minecraft.getMinecraft().theWorld.spawnEntityInWorld(entity);
 			((EntityLiving) entity).setAIMoveSpeed((float)0.5);
 		}
