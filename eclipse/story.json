@@ -35,6 +35,13 @@
                             "tag": "riding"
                         }
                     }
+                ],
+
+                "events": [
+                    {
+                        "type": "weather",
+                        "weather": "rain"
+                    }
                 ]
             }
         ]

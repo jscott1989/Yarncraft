@@ -22,7 +22,7 @@ public abstract class GeoYarnEvent {
 			return new SpawnEvent(jsonEvent.getString("mob"), jsonEvent.getInt("number"));
 		}
 		else if(type.equals("weather")){
-			return new WeatherEvent(jsonEvent.getString("weather"), jsonEvent.getInt("duration"));
+			return new WeatherEvent(jsonEvent.getString("weather"));
 		}
 		else{
 			throw new InvalidGeoYarnEventException();

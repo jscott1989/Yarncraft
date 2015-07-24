@@ -18,8 +18,6 @@ public class GeoYarnReceiver {
 		if (YarnCraft.geoYarn != null){
 			YarnCraft.geoYarn.update();
 		}
-		//EntityRegistry.addSpawn(MyEntity.class, spawnProbability, minSpawn, maxSpawn, EnumCreatureType.monster);
-		//Minecraft.getMinecraft().theWorld.rainingStrength = 2;
 	}
 	
 	@SubscribeEvent
